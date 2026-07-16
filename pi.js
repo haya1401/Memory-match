@@ -20,9 +20,11 @@ async function loginPi(){
 
 
         document.getElementById("loginPage").style.display="none";
+
         document.getElementById("gamePage").style.display="block";
 
         start();
+
 
     } catch(error){
 
