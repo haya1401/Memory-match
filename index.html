@@ -7,7 +7,6 @@
 <title>Memory Match</title>
 
 <link rel="stylesheet" href="style.css">
-
 <link rel="manifest" href="manifest.json">
 
 <script src="https://sdk.minepi.com/pi-sdk.js"></script>
@@ -16,11 +15,21 @@
 
 <body>
 
+<!-- زر Pi خارج اللعبة -->
+<div class="pi-login">
+    <button onclick="loginPi()">
+        🟣 تسجيل دخول Pi
+    </button>
+    <p id="user"></p>
+</div>
+
+
 <div class="container">
 
 <img src="assets/logo.png" class="logo">
 
 <h1>🧠 Memory Match</h1>
+
 
 <div class="info">
 <span>النقاط: <b id="score">0</b></span>
@@ -32,16 +41,8 @@
 
 
 <button onclick="restartGame()">
-إعادة اللعب
+🔄 إعادة اللعب
 </button>
-
-
-<button onclick="loginPi()">
-تسجيل دخول Pi
-</button>
-
-
-<p id="user"></p>
 
 
 </div>
@@ -49,7 +50,6 @@
 
 <script src="pi.js"></script>
 <script src="game.js"></script>
-
 
 </body>
 </html>
