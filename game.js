@@ -118,10 +118,4 @@ moves=0;
 document.getElementById("score").innerHTML=0;
 document.getElementById("moves").innerHTML=0;
 
-start();
 
-}
-
-
-
-start();
