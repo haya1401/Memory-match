@@ -88,3 +88,17 @@ button {
     top:15px;
     right:15px;
 }
+#loginPage{
+
+text-align:center;
+padding-top:100px;
+
+}
+
+#loginPage button{
+
+padding:15px 30px;
+border-radius:25px;
+font-size:20px;
+
+}
