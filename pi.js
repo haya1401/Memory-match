@@ -1,39 +1,35 @@
 Pi.init({
-    version:"2.0"
+    version: "2.0"
 });
 
 
 async function loginPi(){
 
-try{
+    try {
 
-let user = await Pi.authenticate(
-["username"],
-()=>{}
-);
-
-
-document.getElementById("user").innerHTML =
-"مرحبا " + user.user.username;
+        const user = await Pi.authenticate(
+            ["username"],
+            function(payment){
+                console.log(payment);
+            }
+        );
 
 
-// إخفاء صفحة الدخول
-document.getElementById("loginPage").style.display="none";
+        document.getElementById("user").innerHTML =
+        "مرحبا " + user.user.username;
 
 
-// إظهار اللعبة
-document.getElementById("gamePage").style.display="block";
+        document.getElementById("loginPage").style.display="none";
+        document.getElementById("gamePage").style.display="block";
 
+        start();
 
-start();
+    } catch(error){
 
+        console.log(error);
 
-}
+        alert("افتح اللعبة من Pi Browser");
 
-catch(e){
-
-console.log(e);
-
-}
+    }
 
 }
