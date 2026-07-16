@@ -3,35 +3,36 @@ Pi.init({
 });
 
 
-async function loginPi(){
+function loginPi(){
 
-    try {
+    Pi.authenticate(
+        ["username"],
+        function(payment){
+            console.log("Incomplete payment", payment);
+        }
+    )
+    .then(function(auth){
 
-        const user = await Pi.authenticate(
-            ["username"],
-            function(payment){
-                console.log(payment);
-            }
-        );
-
+        console.log(auth);
 
         document.getElementById("user").innerHTML =
-        "مرحبا " + user.user.username;
+        "مرحبا " + auth.user.username;
 
 
-        document.getElementById("loginPage").style.display="none";
+        document.getElementById("loginPage").style.display = "none";
 
-        document.getElementById("gamePage").style.display="block";
+        document.getElementById("gamePage").style.display = "block";
+
 
         start();
 
-
-    } catch(error){
+    })
+    .catch(function(error){
 
         console.log(error);
 
-        alert("افتح اللعبة من Pi Browser");
+        alert("فشل تسجيل الدخول إلى Pi");
 
-    }
+    });
 
 }
